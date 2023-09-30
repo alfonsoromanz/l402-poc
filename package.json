@@ -1,0 +1,69 @@
+{
+  "name": "bitcoin-price-service",
+  "description": "A microservice to get the Bitcoin price in USD. Hopefully, using L402 as authentication :)",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 18.16.0"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "npm",
+    "database": "other",
+    "framework": "express",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "json"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.shared.js"
+  ],
+  "main": "src/client",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src/",
+    "prettier": "npx prettier \"**/*.js\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
+    "test": "npm run mocha",
+    "bundle:client": "npm pack --pack-destination ./public"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "5.0.9",
+    "@feathersjs/authentication": "5.0.9",
+    "@feathersjs/authentication-client": "5.0.9",
+    "@feathersjs/configuration": "5.0.9",
+    "@feathersjs/errors": "5.0.9",
+    "@feathersjs/express": "5.0.9",
+    "@feathersjs/feathers": "5.0.9",
+    "@feathersjs/schema": "5.0.9",
+    "@feathersjs/socketio": "5.0.9",
+    "@feathersjs/transport-commons": "5.0.9",
+    "compression": "1.7.4",
+    "winston": "3.10.0"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "5.0.9",
+    "@feathersjs/rest-client": "5.0.9",
+    "axios": "1.5.1",
+    "cross-env": "7.0.3",
+    "mocha": "10.2.0",
+    "nodemon": "3.0.1",
+    "prettier": "3.0.3"
+  }
+}
